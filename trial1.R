@@ -31,5 +31,16 @@ data_steps_by_interval <- aggregate(steps ~ interval + type_of_day,
                                     data, mean)
 
 
+qplot(interval, 
+      steps, 
+      data = data_steps_by_interval, 
+      type = 'l', 
+      geom=c("line"),
+      xlab = "Interval", 
+      ylab = "Number of steps", 
+      main = "") +
+    facet_wrap(~ type_of_day, ncol = 1)
+
+
 
 
