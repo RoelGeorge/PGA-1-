@@ -66,7 +66,12 @@ data['type_of_day'] <- weekdays(data$date)
 data$type_of_day[data$type_of_day  %in% c('Saturday','Sunday') ] <- "weekend"
 data$type_of_day[data$type_of_day != "weekend"] <- "weekday"
 ```
-
+### setting the class of type_of_day as *factor* and making data plottable
+```{r}
+data$type_of_day <- as.factor(data$type_of_day)
+data_steps_by_interval <- aggregate(steps ~ interval + type_of_day,
+                                    data, mean)
+```
 
 
 
