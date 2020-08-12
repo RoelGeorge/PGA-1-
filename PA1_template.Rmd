@@ -32,12 +32,21 @@ data<-baddata[!is.na(baddata),]
 hist1_data<-summarise(group_by(data,date),total=sum(steps))
 ```
 
-###Plotting the histogram of the total no. of steps taken each day 
+### Plotting the histogram of the total no. of steps taken each day 
 ```{r}
 hist(hist1_data$total,main = "histogram of total no. of steps per day",
      xlab="total no. of steps")
+
+```
+### Summarising the data (displaying mean and median
+### of the total no. of steps taken each day)
+```{r}
 summary(hist1_data)
 ```
+
+
+
+
 
 
 
