@@ -20,8 +20,7 @@ baddata<- read.csv("activity.csv")
 ```
 
 
-### Changing the class of baddata$ date from character to date 
-### and removing the NAs to get a clen dataset
+### Changing the class of baddata$ date from character to date   and removing the NAs to get a clen dataset
 ```{r}
 baddata$date<-as.Date(baddata$date)
 data<-baddata[!is.na(baddata),]
@@ -38,14 +37,12 @@ hist(hist1_data$total,main = "histogram of total no. of steps per day",
      xlab="total no. of steps")
 
 ```
-### Summarising the data (displaying mean and median
-### of the total no. of steps taken each day).
+### Summarising the data (displaying mean and median  of the total no. of steps taken each day).
 ```{r}
 summary(hist1_data)
 ```
 
-### creating the dataset and plotting the time series plot of the
-### average number of steps taken.
+### creating the dataset and plotting the time series plot of the  average number of steps taken.
 ```{r}
 steps_by_interval <- aggregate(steps ~ interval, data, mean)
 plot(steps_by_interval$interval,steps_by_interval$steps, type = "l",
@@ -73,8 +70,7 @@ data_steps_by_interval <- aggregate(steps ~ interval + type_of_day,
                                     data, mean)
 ```
 
-### Plotting Panel plot comparing the average number of steps taken 
-###per 5-minute interval across weekdays and weekends.
+### Plotting Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends.
 ```{r}
 qplot(interval, 
       steps, 
