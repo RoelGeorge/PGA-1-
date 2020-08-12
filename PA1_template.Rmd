@@ -39,10 +39,24 @@ hist(hist1_data$total,main = "histogram of total no. of steps per day",
 
 ```
 ### Summarising the data (displaying mean and median
-### of the total no. of steps taken each day)
+### of the total no. of steps taken each day).
 ```{r}
 summary(hist1_data)
 ```
+
+### creating the dataset and plotting the time series plot of the
+### average number of steps taken.
+```{r}
+steps_by_interval <- aggregate(steps ~ interval, data, mean)
+plot(steps_by_interval$interval,steps_by_interval$steps, type = "l",
+     xlab = "interval",ylab = "avg steps")
+```
+
+###Calling the maximum of the average number of steps taken.
+```{r}
+steps_by_interval[which.max(steps_by_interval$steps),]
+```
+
 
 
 
