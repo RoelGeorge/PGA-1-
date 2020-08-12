@@ -57,7 +57,15 @@ plot(steps_by_interval$interval,steps_by_interval$steps, type = "l",
 steps_by_interval[which.max(steps_by_interval$steps),]
 ```
 
-
+### adding a new column-"Type of day"
+```{r}
+data['type_of_day'] <- weekdays(data$date)
+```
+### Defining weekdays and weekends
+```{r}
+data$type_of_day[data$type_of_day  %in% c('Saturday','Sunday') ] <- "weekend"
+data$type_of_day[data$type_of_day != "weekend"] <- "weekday"
+```
 
 
 
